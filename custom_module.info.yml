@@ -1,0 +1,9 @@
+name: 'JSON to Drupal'
+type: module
+description: 'Custom entity and migration from JSON to Drupal'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_plus 
+  - drupal:migrate_tools

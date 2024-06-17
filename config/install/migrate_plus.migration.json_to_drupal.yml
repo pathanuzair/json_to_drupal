@@ -1,0 +1,36 @@
+id: json_to_drupal
+label: 'Migrate data from JSON to Drupal with dynamic mapping'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'modules/custom/custom_module/files/cities.json'
+  item_selector: '/'
+  fields:
+    - name: id
+      label: 'ID'
+      selector: id
+    - name: city
+      label: 'City'
+      selector: city
+    - name: loc
+      label: 'Location'
+      selector: loc
+    - name: pop
+      label: 'Population'
+      selector: pop
+    - name: state
+      label: 'State'
+      selector: state
+  ids:
+    id:
+      type: string
+process:
+  id: id
+  city: city
+  loc: loc
+  pop: pop
+  state: state
+destination:
+  plugin: 'entity:city'
+migration_group: mongo_to_drupal

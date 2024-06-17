@@ -1,0 +1,7 @@
+custom_module.json_mapping_form:
+  path: '/admin/config/custom_module/json-mappings'
+  defaults:
+    _form: '\Drupal\custom_module\Form\JsonMappingForm'
+    _title: 'JSON Mappings'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,37 @@
+id: migrate_json_to_city
+label: 'Migrate JSON data to City Entity'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - 'modules/custom/custom_module/files/cities.json'
+  item_selector: '/'
+  fields:
+    - name: id
+      label: 'ID'
+      selector: id
+    - name: city
+      label: 'City'
+      selector: city
+    - name: loc
+      label: 'Location'
+      selector: loc
+    - name: pop
+      label: 'Population'
+      selector: pop
+    - name: state
+      label: 'State'
+      selector: state
+  ids:
+    id:
+      type: string
+process:
+  id: id
+  city: city
+  loc: loc
+  pop: pop
+  state: state
+destination:
+  plugin: entity:city
+migration_group: json_to_drupal

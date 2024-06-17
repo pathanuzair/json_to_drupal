@@ -1,0 +1,19 @@
+city:
+  type: entity
+  label: 'City'
+  mapping:
+    id:
+      type: integer
+      label: 'ID'
+    city:
+      type: string
+      label: 'City'
+    state:
+      type: string
+      label: 'State'
+    pop:
+      type: integer
+      label: 'Population'
+    loc:
+      type: map
+      label: 'Location'
